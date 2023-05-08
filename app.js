@@ -15,9 +15,7 @@ nunjcks.configure('view',{
     watch: true
 });
 
-app.use('/', indexRouter);
-// app.use('/users', usersRouter);
-// app.use('/comments', commentsRouter);
+
 
 app.use(morgan('dev')); // 개발시에 로그 확인 하는 라이브러리
 
@@ -26,6 +24,11 @@ app.use(express.static(path.join(__dirname,'img')));
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
+
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+// app.use('/comments', commentsRouter);
 
 app.listen(app.get('port'),()=>{
     console.log(app.get('port'),'번 서버 시작');
