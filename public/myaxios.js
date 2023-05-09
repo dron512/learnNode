@@ -3,16 +3,18 @@ document.getElementById('user-form').addEventListener('submit', async(e)=>{
 
     const username = document.getElementById('username').value;
     const age = document.getElementById('age').value;
-    const married = document.getElementById('married').value;
+    const married = document.getElementById('married').checked;
 
+    const info = document.getElementById('info');
     axios.post('/users/save',
         {username, age, married}
     )
     .then( (result)=>{
-        console.log(result.data);
+        info.textContent = result.data;
+        location.href="/";
     })
     .catch( (err)=>{
-        console.log(err);
+        info.textContent = err.data;
     })
     
 })

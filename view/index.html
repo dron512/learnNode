@@ -42,6 +42,30 @@
                 <button type="submit">등록</button>
             </fieldset>
         </form>
+        <h2 id="info"></h2>
+        <table style="border: 1px solid black;
+                     width: 100%;
+                     text-align: center;">
+            <thead>
+                <tr>
+                    <th>USERID</th>
+                    <th>USERNAME</th>
+                    <th>AGE</th>
+                    <th>MARRIED</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.age}}</td>
+                    <td>{{user.married}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
     </div>
     <div>
         <form id="comment-form">

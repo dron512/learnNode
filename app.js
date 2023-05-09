@@ -7,7 +7,7 @@ const indexRouter = require('./route');
 const usersRouter = require('./route/users');
 const commentsRouter = require('./route/users');
 
-const {User,Comment} = require('./model/db');
+require('./model/db');
 
 const app = express();
 app.set('port',process.env.PORT || 3001);
