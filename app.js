@@ -18,15 +18,13 @@ nunjcks.configure('view',{
     watch: true
 });
 
-
-
 app.use(morgan('dev')); // 개발시에 로그 확인 하는 라이브러리
 
 app.use(express.static(path.join(__dirname,'public')));
 app.use(express.static(path.join(__dirname,'img')));
 
 app.use(express.json());
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({extended:true}));
 
 
 app.use('/', indexRouter);

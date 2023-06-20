@@ -1,8 +1,18 @@
 const {Sequelize,Model,DataTypes} = require('sequelize');
 
-const sequelize = new Sequelize("nodelearn", "student", "student123", {
+// const sequelize = new Sequelize("nodelearn", "student", "student123", {
+//   host: "localhost",
+//   dialect: "mysql",
+//   port: 3306,
+// });
+
+const sequelize = new Sequelize({
   host: "localhost",
-  dialect: "mysql",
+  dialect: "oracle",
+  port: 1521,
+  database: 'xe',
+  username: 'kb',
+  password: 'kb602',
 });
 
 const User = sequelize.define('user',{
